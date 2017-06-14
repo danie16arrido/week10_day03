@@ -1,4 +1,4 @@
-Array.prototype.insert = function (index, item) {
+Array.prototype.insert = function ( index, item ) {
   this.splice(index, 0, item);
 };
 
@@ -12,22 +12,22 @@ Array.prototype.unique = function() {
 
 var arrayTasks = {
 
-	concat: function (arr1, arr2) {
-		return arr1.concat(arr2);
+	concat: function ( arr1, arr2 ) {
+		return arr1.concat( arr2 );
 	},
 
-	insertAt: function (arr, itemToAdd, index) {
-		arr.insert(index, itemToAdd);
+	insertAt: function ( arr, itemToAdd, index ) {
+		arr.insert( index, itemToAdd );
 		return arr;
 	},
 
-	square: function (arr) {
+	square: function ( arr ) {
 			return arr.map(function( number ){
-				return Math.pow(number, 2);
+				return Math.pow( number, 2 );
 			});
 	},
 
-	sum: function (arr) {
+	sum: function ( arr ) {
 		return arr.reduce(function( total, number ){
 			return total + number;
 		})
@@ -52,14 +52,14 @@ var arrayTasks = {
 		return result;
 	},
 
-	removeAndClone: function (arr, valueToRemove) {
+	removeAndClone: function ( arr, valueToRemove ) {
 			var count = this.countOcurrences( arr );
 			delete count[valueToRemove];
 			return Object.keys(count);
 
 	},
 
-	findIndexesOf: function (arr, itemToFind) {
+	findIndexesOf: function ( arr, itemToFind ) {
 		var indexes = [];
 		// arr.forEach(function( item, index ){
   	// 	if (item === itemToFind){
@@ -75,10 +75,27 @@ var arrayTasks = {
 		return indexes;
 	},
 
-	// sumOfAllEvenNumbersSquared: function (arr) {
+	sumOfAllEvenNumbersSquared: function ( arr ) {
+		var counter = 0;
+		this.findEvenNumbers( arr ).map(function ( num ){
+			counter += num ** 2;
+		})
+		return counter;
+	},
 
-	// }
+	findOddNumbers: function ( arr ){
+		var oddNumbers =  arr.filter( function ( num ) {
+			return num % 2 === 1;
+		})
+		return oddNumbers;
+	},
 
+	findEvenNumbers: function ( arr ){
+		var evenNumbers =  arr.filter( function ( num ) {
+			return num % 2 === 0;
+		})
+		return evenNumbers;
+	}
 }
 
 module.exports = arrayTasks
