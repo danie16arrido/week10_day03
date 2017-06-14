@@ -52,9 +52,12 @@ var arrayTasks = {
 		return result;
 	},
 
-	// removeAndClone: function (arr, valueToRemove) {
+	removeAndClone: function (arr, valueToRemove) {
+			var count = this.countOcurrences( arr );
+			delete count[valueToRemove];
+			return Object.keys(count);
 
-	// },
+	},
 
 	// findIndexesOf: function (arr, itemToFind) {
 
