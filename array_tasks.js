@@ -11,7 +11,6 @@ Array.prototype.unique = function() {
 }
 
 var arrayTasks = {
-
 	concat: function ( arr1, arr2 ) {
 		return arr1.concat( arr2 );
 	},
@@ -61,12 +60,6 @@ var arrayTasks = {
 
 	findIndexesOf: function ( arr, itemToFind ) {
 		var indexes = [];
-		// arr.forEach(function( item, index ){
-  	// 	if (item === itemToFind){
-		// 		indexes.push(index);
-		// 	}
-		// })
-
 		arr.reduce(function ( acc, currentValue, currentIndex ){
 			if(currentValue === itemToFind){
 				indexes.push(currentIndex);
